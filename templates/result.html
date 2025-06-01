@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bird Species Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+            background-color: #f3f3f3;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            margin: auto;
+            width: 60%;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 300px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .prediction {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .confidence {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        {% if image_url %}
+        <img src="/{{ image_url }}" alt="Uploaded Bird Image">
+        {% endif %}
+        <div class="prediction">Predicted Species: {{ prediction }}</div>
+        <div class="confidence">Confidence: {{ confidence }}%</div>
+        <a class="back-link" href="{% url 'predict_bird_species' %}">Try Another Image</a>
+    </div>
+</body>
+
+</html>
