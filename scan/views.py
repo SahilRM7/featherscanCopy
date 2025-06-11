@@ -48,12 +48,14 @@ def image_scan(request):
     faqs = FAQ.objects.all()[:4]
     prediction = None
     confidence = None
+    uploaded_image_url = None  # new
 
     if request.method == 'POST' and request.FILES.get('bird_image'):
         image_file = request.FILES['bird_image']
         fs = FileSystemStorage()
         filename = fs.save(image_file.name, image_file)
         file_path = fs.path(filename)
+        uploaded_image_url = fs.url(filename)  # save image URL for preview
 
         try:
             img = load_img(file_path, target_size=(224, 224))
@@ -70,14 +72,14 @@ def image_scan(request):
             prediction = f"Error: {str(e)}"
             confidence = None
 
-        # Optional: Remove the uploaded image file after prediction
-        if os.path.exists(file_path):
-            os.remove(file_path)
+        # Clean up image file (optional, disable this if preview is needed)
+        # os.remove(file_path)
 
     return render(request, 'imgscan.html', {
         'faqs': faqs,
         'prediction': prediction,
         'confidence': confidence,
+        'image_url': uploaded_image_url,  # pass it to template
     })
 
 

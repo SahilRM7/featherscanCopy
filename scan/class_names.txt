@@ -11,14 +11,14 @@ Gray-Wagtail
 Hoopoe
 House-Crow
 Indian-Grey-Hornbill
-Indian-Peacock
+Rufous-Treepie
 Indian-Pitta
 Indian-Roller
 Jungle-Babbler
 Northern-Lapwing
 Red-Wattled-Lapwing
 Ruddy-Shelduck
-Rufous-Treepie
+Indian-Peacock
 Sarus-Crane
 White-Breasted-Kingfisher
 White-Breasted-Waterhen

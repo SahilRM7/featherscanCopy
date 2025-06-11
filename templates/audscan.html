@@ -124,16 +124,16 @@
           </h3>
           <p class="mt-2 text-xl text-green-700 font-bold">{{ result }}</p>
         </div>
-        {% if audio_url %}
+        <!-- {% if audio_url %}
           <h3>Submitted Audio:</h3>
           <audio controls>
             <source src="{{ audio_url }}" type="audio/wav">
             Your browser does not support the audio element.
           </audio>
-        {% endif %}
+        {% endif %} -->
 
         {% if bird_info %}
-          <h3>Bird Info:</h3>
+        <h3>Bird Info:</h3>
         <p><strong>Name:</strong> {{ bird_info.name }}</p>
         <p><strong>Scientific Name:</strong> {{ bird_info.scientific_name }}</p>
         <p><strong>Description:</strong> {{ bird_info.description }}</p>
